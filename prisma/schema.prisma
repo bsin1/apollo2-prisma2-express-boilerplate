@@ -2,10 +2,10 @@ generator photon {
   provider = "photonjs"
 }
 
-datasource db {
-  provider = "postgresql"
-  url      = env("POSTGRES_URL")
-}
+// datasource db {
+//   provider = "postgresql"
+//   url      = env("POSTGRES_URL")
+// }
 
 // datasource db {
 //   provider = "mysql"
@@ -18,23 +18,23 @@ datasource db {
 // }
 
 model User {
- id     String  @default(cuid()) @id
- email  String  @unique
- name   String
- birthday String
- conversations Conversation[]
+  id            String         @default(cuid()) @id
+  email         String         @unique
+  name          String
+  birthday      String
+  conversations Conversation[]
 }
 
 model Conversation {
-  id        String   @default(cuid()) @id
-  createdAt DateTime @default(now())
-  messages  Message[]
+  id           String    @default(cuid()) @id
+  createdAt    DateTime  @default(now())
+  messages     Message[]
   participants User[]
 }
 
 model Message {
   id        String   @default(cuid()) @id
   createdAt DateTime @default(now())
-  message String
-  author User
+  message   String
+  author    User
 }
