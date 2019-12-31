@@ -28,9 +28,9 @@ Prisma datasources (located in /prisma/schema.prisma) are configured to use the 
 `POSTGRES_URL` for PostgreSQL Databases  
 `MYSQL_URL` for MySQL Databases
 
-Uncomment your desired datasource and add a `.env` file to the root of the project to add key value pairs to `process.env` via [DotEnv](https://github.com/motdotla/dotenv).
+Uncomment your desired datasource and add a `.env` file to the root of the project containing any required variables. All listed variables will be accessible inside `process.env` via [DotEnv](https://github.com/motdotla/dotenv)
 
-_.env_
+_/.env_
 
 ```
 POSTGRES_URL=YOUR_POSTGRES_DB_URL
