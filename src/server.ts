@@ -1,7 +1,7 @@
 import "./config/env"
 import express from "express"
 import { ApolloServer } from "apollo-server-express"
-import { schema } from "./schema"
+import { schema } from "./config/schema"
 import { createContext } from "./config/context"
 
 const isProduction = process.env.NODE_ENV === "production"
