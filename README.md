@@ -21,7 +21,25 @@ Install Prisma 2 globally (If you don't want to install globally replace future 
 npm install -g prisma2
 ```
 
-### 2. Run Prisma's development mode
+### 2. Add environment variables
+
+Prisma datasources (located in /prisma/schema.prisma) are configured to use the following environment variables:
+
+`POSTGRES_URL` for PostgreSQL Databases
+`MYSQL_URL` for MySQL Databases
+
+This project uses [DotEnv](https://github.com/motdotla/dotenv) to include environment variables.
+
+add a `.env` file to the root of the project and all key value pairs will be added to `process.env`.
+
+_.env_
+
+```
+POSTGRES_URL=YOUR_POSTGRES_DB_URL
+MYSQL_URL=YOUR_MYSQL_DB_URL
+```
+
+### 3. Run Prisma's development mode
 
 <Details><Summary>Learn more about the development mode</Summary>
 
@@ -42,7 +60,7 @@ prisma2 dev
 
 You can now open your browser and navigate to [`http://localhost:5555`](http://localhost:5555) to browse the active Database with Prisma Studio.
 
-### 3. Run the server
+### 4. Run the server
 
 Start the Apollo server with this command:
 
@@ -56,7 +74,7 @@ You can now open your browser and navigate to [`http://localhost:3000/graphql`](
 
 ## Next steps
 
-### Prisma schema persistance
+### 5. Prisma schema persistance
 
 Editing the Prisma schema in development mode generates _development migrations_ that are thrown away once the desired schema has been found. When you have finalized the updates to your schema you must leave development mode and persist the schema using Prisma's Lift commands to take advantage of their migration history.
 
