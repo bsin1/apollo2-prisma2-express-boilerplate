@@ -1,0 +1,40 @@
+generator photon {
+  provider = "photonjs"
+}
+
+datasource db {
+  provider = "postgresql"
+  url = "***"
+}
+
+// datasource db {
+//   provider = "mysql"
+     url = "***"
+// }
+
+// datasource db {
+//   provider = "sqlite"
+     url = "***"
+// }
+
+model User {
+ id     String  @default(cuid()) @id
+ email  String  @unique
+ name   String
+ birthday String
+ conversations Conversation[]
+}
+
+model Conversation {
+  id        String   @default(cuid()) @id
+  createdAt DateTime @default(now())
+  messages  Message[]
+  participants User[]
+}
+
+model Message {
+  id        String   @default(cuid()) @id
+  createdAt DateTime @default(now())
+  message String
+  author User
+}

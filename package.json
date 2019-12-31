@@ -1,0 +1,32 @@
+{
+  "name": "script",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/photon": "2.0.0-preview019",
+    "apollo-server-express": "^2.9.15",
+    "express": "^4.17.1",
+    "graphql": "^14.5.8",
+    "nexus": "^0.12.0-rc.5",
+    "nexus-prisma": "^0.6.1"
+  },
+  "devDependencies": {
+    "prettier": "1.19.1",
+    "prisma2": "2.0.0-preview019",
+    "ts-node": "8.5.4",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "3.7.4"
+  },
+  "prettier": {
+    "semi": false
+  },
+  "scripts": {
+    "build": "npm -s run clean && npm -s run generate && tsc",
+    "clean": "rm -rf dist",
+    "dev": "ts-node-dev --no-notify --respawn --transpileOnly src/server",
+    "generate": "npm -s run generate:prisma && npm -s run generate:nexus",
+    "generate:prisma": "prisma2 generate",
+    "generate:nexus": "ts-node --transpile-only src/schema",
+    "postinstall": "npm -s run generate",
+    "start": "node dist/server"
+  }
+}
