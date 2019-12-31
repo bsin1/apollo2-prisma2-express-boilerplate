@@ -21,16 +21,14 @@ Install Prisma 2 globally (If you don't want to install globally replace future 
 npm install -g prisma2
 ```
 
-### 2. Add environment variables
+### 2. Configure Prisma datasource & environment variables
 
 Prisma datasources (located in /prisma/schema.prisma) are configured to use the following environment variables:
 
 `POSTGRES_URL` for PostgreSQL Databases
 `MYSQL_URL` for MySQL Databases
 
-This project uses [DotEnv](https://github.com/motdotla/dotenv) to include environment variables.
-
-add a `.env` file to the root of the project and all key value pairs will be added to `process.env`.
+Uncomment your desired datasource and add a `.env` file to the root of the project to add key value pairs to `process.env` via [DotEnv](https://github.com/motdotla/dotenv).
 
 _.env_
 
@@ -38,6 +36,8 @@ _.env_
 POSTGRES_URL=YOUR_POSTGRES_DB_URL
 MYSQL_URL=YOUR_MYSQL_DB_URL
 ```
+
+Note: You can replace the `env(DATABASE_URL)` with a raw URL string if you do not want to use environment variables. No Environment variables are required when using an SQLite datasource.
 
 ### 3. Run Prisma's development mode
 
