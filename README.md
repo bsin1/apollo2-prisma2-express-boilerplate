@@ -6,19 +6,19 @@ This project will get you up and running with Express, Apollo Server, and Primsa
 
 ### 1. Clone & install dependencies
 
-Clone the `master` branch of this repository:
+Clone the `master` branch of this repository
+
+Install Prisma 2 globally (If you don't want to install globally replace future `prisma2` calls with `npx prisma2`)
+
+```
+npm install -g prisma2
+```
 
 Install Node dependencies:
 
 ```
 cd apollo2-prisma2-express-boilerplate
 npm install
-```
-
-Install Prisma 2 globally (If you don't want to install globally replace future `prisma2` calls with `npx prisma2`)
-
-```
-npm install -g prisma2
 ```
 
 ### 2. Configure Prisma datasource & environment variables
@@ -37,7 +37,7 @@ POSTGRES_URL=YOUR_POSTGRES_DB_URL
 MYSQL_URL=YOUR_MYSQL_DB_URL
 ```
 
-Note: You can replace the `env(DATABASE_URL)` with a raw URL string if you do not want to use environment variables. No Environment variables are required when using an SQLite datasource.
+Note: You can replace the `env(DATABASE_URL)` field inside `/prisma/schema.prisma` with a raw URL string if you do not want to use environment variables. No Environment variables are required when using an SQLite datasource.
 
 ### 3. Run Prisma's development mode
 
