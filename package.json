@@ -26,7 +26,7 @@
     "dev": "ts-node-dev --no-notify --respawn --transpileOnly src/server",
     "generate": "npm -s run generate:prisma && npm -s run generate:nexus",
     "generate:prisma": "prisma2 generate",
-    "generate:nexus": "ts-node --transpile-only src/schema",
+    "generate:nexus": "ts-node --transpile-only config/schema",
     "postinstall": "npm -s run generate",
     "start": "node dist/server"
   }
