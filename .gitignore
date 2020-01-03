@@ -105,3 +105,6 @@ dist
 
 #Generated Files
 generated/
+
+#dev migrations
+prisma/migrations

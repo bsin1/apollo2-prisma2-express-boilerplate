@@ -1,15 +1,14 @@
-import { objectType } from 'nexus'
+import { objectType } from "nexus"
 
 export const User = objectType({
-    name: 'User',
-    definition(t) {
-        t.model.id()
-        t.model.name()
-        t.model.email()
-        t.model.birthday()
-        t.model.conversations({
-            pagination: false
-        })
-    },
+  name: "User",
+  definition(t) {
+    t.model.id()
+    t.model.name()
+    t.model.email()
+    t.model.password()
+    t.model.conversations({
+      pagination: false
+    })
+  }
 })
-

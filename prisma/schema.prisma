@@ -12,16 +12,16 @@ generator photon {
 //   url      = env("MYSQL_URL")
 // }
 
-// datasource db {
-//   provider = "sqlite"
-//   url      = "file:dev.db"
-// }
+datasource db {
+  provider = "sqlite"
+  url      = "file:dev.db"
+}
 
 model User {
   id            String         @default(cuid()) @id
   email         String         @unique
-  name          String
-  birthday      String
+  name          String?
+  password      String
   conversations Conversation[]
 }
 
